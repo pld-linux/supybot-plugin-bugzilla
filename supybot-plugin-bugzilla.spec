@@ -2,7 +2,7 @@ Summary:	Bugzilla plugin for Supybot
 Summary(pl.UTF-8):	Wtyczka Bugzilli dla Supybota
 Name:		Supybot-plugin-Bugzilla
 Version:	3.0.0.1
-Release:	2
+Release:	3
 License:	BSD
 Group:		Applications/Communications
 Source0:	http://supybot.com/Members/mkanat/Bugzilla/3.0.0.1/download/at_download
