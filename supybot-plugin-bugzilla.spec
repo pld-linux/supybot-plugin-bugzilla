@@ -1,8 +1,8 @@
 Summary:	Bugzilla plugin for Supybot
 Summary(pl.UTF-8):	Wtyczka Bugzilli dla Supybota
-Name:		Supybot-plugin-Bugzilla
+Name:		supybot-plugin-bugzilla
 Version:	3.0.0.1
-Release:	3
+Release:	4
 License:	BSD
 Group:		Applications/Communications
 Source0:	http://supybot.com/Members/mkanat/Bugzilla/3.0.0.1/download/at_download
@@ -12,7 +12,8 @@ BuildRequires:	python >= 1:2.5
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
 %pyrequires_eq  python
-Requires:	Supybot
+Requires:	supybot
+Obsoletes:	Supybot-plugin-Bugzilla
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -28,8 +29,8 @@ This plugin can:
   limited number of results. (Bugzilla 2.22+ only)
 - Report changes to your channel by receiving emails from multiple
   Bugzillas.
-- Parse gdb stack traces in newly-filed bugs and report the details
-  of the stack trace to the channel.
+- Parse gdb stack traces in newly-filed bugs and report the details of
+  the stack trace to the channel.
 
 It supports Bugzilla 2.18 and above (except for the query command, as
 noted above), can interface with multiple Bugzillas, and works on
@@ -67,8 +68,7 @@ pomocy, którą można czytać po załadowaniu wtyczki.
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{py_sitescriptdir}/supybot/plugins/Bugzilla
-
-install *.py $RPM_BUILD_ROOT%{py_sitescriptdir}/supybot/plugins/Bugzilla
+cp -p *.py $RPM_BUILD_ROOT%{py_sitescriptdir}/supybot/plugins/Bugzilla
 
 %py_comp $RPM_BUILD_ROOT%{py_sitescriptdir}
 %py_ocomp $RPM_BUILD_ROOT%{py_sitescriptdir}
